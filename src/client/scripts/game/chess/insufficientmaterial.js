@@ -189,9 +189,8 @@ const insufficientmaterial = (function() {
         }
 
         // Make the draw checks by comparing scenario and invertedScenario to scenrariosForInsuffMat
-        if (isScenarioInsuffMat(scenario)) return 'draw insuffmat';
-        else if (isScenarioInsuffMat(invertedScenario)) return 'draw insuffmat';
-        else return false;
+        if (isScenarioInsuffMat(scenario) || isScenarioInsuffMat(invertedScenario)) return 'draw insuffmat';
+        return false;
     }
 
     return Object.freeze({
